@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz Anime Pro</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🎌</text></svg>">
+</head>
+<body>
+    <div class="background-animation">
+        <div class="particle particle-1"></div>
+        <div class="particle particle-2"></div>
+        <div class="particle particle-3"></div>
+        <div class="particle particle-4"></div>
+    </div>
+
+    <div class="container">
+        <div class="header">
+            <div class="logo">🎌 ANIME PRO</div>
+            <div class="subtitle">Teste seus limites otaku</div>
+        </div>
+        
+        <div class="dificuldade">
+            <button class="btn-dificuldade ativo" data-dificuldade="facil">
+                <span class="emoji">🥉</span>
+                <span class="label">Fácil</span>
+                <span class="multiplier">x1</span>
+            </button>
+            <button class="btn-dificuldade" data-dificuldade="medio">
+                <span class="emoji">🥈</span>
+                <span class="label">Médio</span>
+                <span class="multiplier">x2</span>
+            </button>
+            <button class="btn-dificuldade" data-dificuldade="dificil">
+                <span class="emoji">🥇</span>
+                <span class="label">Difícil</span>
+                <span class="multiplier">x3</span>
+            </button>
+            <button class="btn-dificuldade impossivel" data-dificuldade="impossivel">
+                <span class="emoji">💀</span>
+                <span class="label">Impossível</span>
+                <span class="multiplier">x5</span>
+            </button>
+        </div>
+        
+        <button class="btn-primary" id="iniciarBtn" onclick="iniciarQuiz()">
+            <span class="icon">🚀</span>
+            Iniciar Quiz
+        </button>
+
+        <div id="quiz-area" class="quiz-area">
+            <div class="stats">
+                <div class="stat-item">
+                    <span class="stat-label">⏱️ Tempo:</span>
+                    <span class="stat-value" id="timer">15s</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-label">⭐ Pontos:</span>
+                    <span class="stat-value" id="pontuacao">0</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-label">📊 Progresso:</span>
+                    <span class="stat-value" id="progresso">1/10</span>
+                </div>
+            </div>
+            
+            <div class="pergunta-container">
+                <div class="pergunta-numero">#1</div>
+                <div class="pergunta" id="pergunta"></div>
+            </div>
+            
+            <div class="opcoes" id="opcoes"></div>
+            <button class="btn-secondary" id="proxima-btn" onclick="proximaPergunta()" style="display:none;">
+                ➡️ Próxima Pergunta
+            </button>
+        </div>
+
+        <div id="final" class="final-screen">
+            <div class="trophy-container">
+                <div class="trophy" id="trophy"></div>
+            </div>
+            <h2 class="final-title">Quiz Concluído!</h2>
+            <div class="pontuacao-final" id="pontuacao-final">0/0</div>
+            <div class="rank" id="rank"></div>
+            <p class="mensagem-final" id="mensagem-final"></p>
+            <div class="final-actions">
+                <button class="btn-primary" onclick="reiniciarQuiz()">
+                    🔄 Jogar Novamente
+                </button>
+                <button class="btn-secondary" onclick="compartilharResultado()">
+                    📱 Compartilhar
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
